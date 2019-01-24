@@ -21,7 +21,7 @@ namespace Mednax.DeveloperInterview
     {
         delegate void Printer();
 
-        static void Main()
+       /*  static void Main()
         {
             List<Printer> printers = new List<Printer>();
             int i = 0;
@@ -34,7 +34,7 @@ namespace Mednax.DeveloperInterview
             {
                 printer();
             }
-        }
+        }*/
     }
 
     //Question 3
@@ -44,24 +44,24 @@ namespace Mednax.DeveloperInterview
         static String location;
         static DateTime time;
 
-        static void Main()
+        /* static void Main()
         {
             Console.WriteLine(location == null ? "location is null" : location);
             Console.WriteLine(time == null ? "time is null" : time.ToString());
-        }
+        }*/
     }
 
     //Question 4
     //Identify which line is boxing and which line is unboxing
     public class ProgramThree
     {
-        static void Main()
+        /* static void Main()
         {    
             int x = 101;
             Object o = x;
 
             o = 999;
             x = (int)o;
-        }
+        }*/
     }
 }
