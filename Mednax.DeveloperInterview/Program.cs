@@ -8,9 +8,9 @@ namespace Mednax.DeveloperInterview
         public static void Main(string[] args)
         {
             PrintTriangle();
-            PrintAverageSalaryByDepartment();
-            DisplayNumberAndFrequencyFromGivenArray();
-            PrintIsPalindrome();
+            //PrintAverageSalaryByDepartment();
+            //DisplayNumberAndFrequencyFromGivenArray();
+            //PrintIsPalindrome();
 
             Console.ReadLine();
         }
@@ -42,6 +42,20 @@ namespace Mednax.DeveloperInterview
 
             Console.WriteLine("Input the desired width: ");
             int width = Convert.ToInt32(Console.ReadLine());
+            
+            //set threshold to width and loop until
+
+            List<String> output = new List<String>();
+
+            for(int i = 0; i < width; i++){
+                output.Add(num.ToString());
+            }
+
+            for(int i = 0; i < width; i++){
+                Console.WriteLine(output + "\n");
+                output.RemoveAt(0); 
+            }
+
         }
 
         /// <summary>
