@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq
 
 namespace Mednax.DeveloperInterview
 {
@@ -8,7 +9,7 @@ namespace Mednax.DeveloperInterview
         public static void Main(string[] args)
         {
             PrintTriangle();
-            PrintAverageSalaryByDepartment();
+         //   PrintAverageSalaryByDepartment();
             DisplayNumberAndFrequencyFromGivenArray();
             PrintIsPalindrome();
 
@@ -42,6 +43,19 @@ namespace Mednax.DeveloperInterview
 
             Console.WriteLine("Input the desired width: ");
             int width = Convert.ToInt32(Console.ReadLine());
+
+
+
+            for (int i = 1; i <= width; i++)
+            {
+                for (int j = 0; j < i; j++)
+                {
+                    Console.Write(num);
+                }
+                Console.WriteLine();
+
+            }
+            Console.ReadKey();
         }
 
         /// <summary>
@@ -61,7 +75,12 @@ namespace Mednax.DeveloperInterview
                 new Employee {Name = "Julie", Age = 54, Department = "Javascript", Salary = 80000},
                 new Employee {Name = "Samantha", Age = 21, Department = "Design", Salary = 125000}
             };
+
+            var salaries = employees.GroupBy(e => e.Department)
+                                    .Select( person => new person.Key, person.Average(person  =>person.  )
+
         }
+
 
         internal class Employee
         {
@@ -83,6 +102,14 @@ namespace Mednax.DeveloperInterview
             Console.WriteLine("---------------------------------------------------------------------");
             Console.WriteLine("The numbers in the array  are : ");
             Console.WriteLine(" 5, 9, 1, 2, 3, 7, 5, 6, 7, 3, 7, 6, 8, 5, 4, 9, 6, 2");
+
+            var uniq = arr1.ToList().Distinct();
+
+            foreach (int x in uniq)
+            {
+                Console.WriteLine(uniq + ": " + arr1.ToList().Distinct().Count());
+                
+            }
         }
 
         #region Palindrome 
