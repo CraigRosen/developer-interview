@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Text;
 
 namespace Mednax.DeveloperInterview.TDD
 {
@@ -11,5 +13,26 @@ namespace Mednax.DeveloperInterview.TDD
     public class FizzBuzz
     {
 
+        public string PrintNumbers(int number)
+        {
+            var result = new List<string>();
+            for (int i = 1; i <= number; i++)
+            {
+                StringBuilder b = new StringBuilder();
+
+                if (i % 3 == 0)
+                    b.Append("Fizz");
+
+                if (i % 5 == 0)
+                    b.Append("Buzz");
+
+                if (b.Length == 0)
+                    b.Append(i.ToString());
+
+                result.Add(b.ToString());
+            }
+
+            return string.Join(" ", result);
+        }
     }
 }
