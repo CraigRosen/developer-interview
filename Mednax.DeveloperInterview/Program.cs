@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Mednax.DeveloperInterview
 {
@@ -7,10 +8,10 @@ namespace Mednax.DeveloperInterview
     {
         public static void Main(string[] args)
         {
-            PrintTriangle();
+            //PrintTriangle();
             PrintAverageSalaryByDepartment();
-            DisplayNumberAndFrequencyFromGivenArray();
-            PrintIsPalindrome();
+            //DisplayNumberAndFrequencyFromGivenArray();
+            //PrintIsPalindrome();
 
             Console.ReadLine();
         }
@@ -61,6 +62,15 @@ namespace Mednax.DeveloperInterview
                 new Employee {Name = "Julie", Age = 54, Department = "Javascript", Salary = 80000},
                 new Employee {Name = "Samantha", Age = 21, Department = "Design", Salary = 125000}
             };
+
+            var depts = employees
+                .GroupBy(e => e.Department)
+                .Select(d => new { AvgSalary = d.Average(d => d.Salary)) });
+
+            foreach(var dept in depts)
+            {
+                Console.WriteLine(dept);
+            }
         }
 
         internal class Employee
@@ -77,12 +87,23 @@ namespace Mednax.DeveloperInterview
         public static void DisplayNumberAndFrequencyFromGivenArray()
         {
             int[] arr1 = new int[] { 5, 9, 1, 2, 3, 7, 5, 6, 7, 3, 7, 6, 8, 5, 4, 9, 6, 2 };
+            int[] tally = new int[10];
 
             Console.WriteLine();
             Console.WriteLine("Coding Exercise #3: Display the number and frequency of number from given array : ");
             Console.WriteLine("---------------------------------------------------------------------");
-            Console.WriteLine("The numbers in the array  are : ");
+            Console.WriteLine("The numbers in the array are : ");
             Console.WriteLine(" 5, 9, 1, 2, 3, 7, 5, 6, 7, 3, 7, 6, 8, 5, 4, 9, 6, 2");
+
+            foreach (int i in arr1)
+            {
+                ++tally[i];
+            }
+            for (int j = 0; j < tally.Length; ++j)
+            {
+                Console.WriteLine("The number {0} occurs {1} times.", j, tally[j]);
+            }
+
         }
 
         #region Palindrome 
@@ -140,6 +161,13 @@ namespace Mednax.DeveloperInterview
 
         private static bool IsPalindrome(string value)
         {
+            for (int i = 0, j = value.Length - 1; i < j; ++i, --j)
+            {
+                if (value[i] != value[j])
+                {
+                    return false;
+                }
+            }
             return true;
         }
 
