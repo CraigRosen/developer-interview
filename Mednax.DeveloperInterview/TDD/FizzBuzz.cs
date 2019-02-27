@@ -12,4 +12,9 @@ namespace Mednax.DeveloperInterview.TDD
     {
 
     }
+
+    public class FizzBuzzTests
+    {
+
+    }
 }
