@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Mednax.DeveloperInterview.TDD
 {
@@ -8,8 +9,16 @@ namespace Mednax.DeveloperInterview.TDD
     /// of both three and five print "FizzBuzz".
     /// i.e.:  "1 2 Fizz 4 Buzz Fizz 7 8 Fizz Buzz 11 Fizz 13 14 FizzBuzz 16 ..."
     /// </summary>
-    public class FizzBuzz
+    public class FizzBuzz : IFizzBuzz
     {
+        IEnumerable<string> IFizzBuzz.DoFizzBuzz()
+        {
+            throw new NotImplementedException();
+        }
+    }
 
+    public interface IFizzBuzz
+    {
+        IEnumerable<string> DoFizzBuzz();
     }
 }
