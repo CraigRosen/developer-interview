@@ -46,7 +46,6 @@ namespace Tests
             Assert.AreEqual(FizzBuzz.FIZZ, result[2]);
             Assert.AreEqual(FizzBuzz.FIZZ, result[5]);
             Assert.AreEqual(FizzBuzz.FIZZ, result[8]);
-            Assert.AreEqual(FizzBuzz.FIZZ, result[14]);
             //etc
         }
 
@@ -62,7 +61,6 @@ namespace Tests
             //Assert
             Assert.AreEqual(FizzBuzz.BUZZ, result[4]);
             Assert.AreEqual(FizzBuzz.BUZZ, result[9]);
-            Assert.AreEqual(FizzBuzz.BUZZ, result[14]);
             //etc
         }
 

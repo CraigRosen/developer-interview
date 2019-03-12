@@ -15,14 +15,36 @@ namespace Mednax.DeveloperInterview.TDD
         public const string BUZZ = "Buzz";
         public const string FIZZBUZZ = FIZZ + BUZZ;
 
-        int[] IFizzBuzz.DoFizzBuzz()
+        string[] IFizzBuzz.DoFizzBuzz()
         {
-            throw new NotImplementedException();
+            var result = new List<string>();
+
+            for (int i = 1; i <= 100; i++)
+            {
+                if (i % 15 == 0)
+                {
+                    result.Add(FIZZBUZZ);
+                }
+                else if (i % 5 == 0)
+                {
+                    result.Add(BUZZ);
+                }
+                else if (i % 3 == 0)
+                {
+                    result.Add(FIZZ);
+                }
+                else
+                {
+                    result.Add(i.ToString());
+                }
+            }
+
+            return result.ToArray();
         }
     }
 
     public interface IFizzBuzz
     {
-        int[] DoFizzBuzz();
+        string[] DoFizzBuzz();
     }
 }
