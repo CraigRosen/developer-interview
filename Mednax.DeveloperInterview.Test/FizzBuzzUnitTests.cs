@@ -4,6 +4,9 @@ using System.Linq;
 
 namespace Tests
 {
+    //In the real world, I would use CollectionAssert on an expected object I store here.
+    //Otherwise I would test more cases from 1 to 100 where I mentioned "etc".
+
     [TestFixture]
     public class FizzBuzzUnitTests
     {
