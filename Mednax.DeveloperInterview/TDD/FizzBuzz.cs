@@ -11,7 +11,11 @@ namespace Mednax.DeveloperInterview.TDD
     /// </summary>
     public class FizzBuzz : IFizzBuzz
     {
-        IEnumerable<string> IFizzBuzz.DoFizzBuzz()
+        public const string FIZZ = "Fizz";
+        public const string BUZZ = "Buzz";
+        public const string FIZZBUZZ = FIZZ + BUZZ;
+
+        int[] IFizzBuzz.DoFizzBuzz()
         {
             throw new NotImplementedException();
         }
@@ -19,6 +23,6 @@ namespace Mednax.DeveloperInterview.TDD
 
     public interface IFizzBuzz
     {
-        IEnumerable<string> DoFizzBuzz();
+        int[] DoFizzBuzz();
     }
 }
